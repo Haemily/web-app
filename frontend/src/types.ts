@@ -1,0 +1,9 @@
+export type User = { id: number; username: string; role: 'member' | 'moderator' };
+export type Session = { user: User; csrf_token: string };
+export type Content = { id: number; title: string; body: string; format: string; topic: string; stage: string; author: string; author_id: number; verified: boolean; created_at: string; saved: boolean; reacted: boolean; reactions: number; comments: number };
+export type Comment = { id: number; body: string; author: string; author_id: number; parent_id: number | null; created_at: string };
+export type Event = { id: number; title: string; description: string; kind: string; starts_at: string; mode: string; host: string; registered: boolean };
+export type Activity = { id: number; title: string; description: string; kind: string; starts_at: string; location: string; organiser: string; organiser_id: number; joined: boolean };
+export type Group = { id: number; name: string; description: string; audience: string };
+export type HelpRequest = { id: number; title: string; description: string; area: string; status: string; requester: string; mine: boolean; my_offer: string | null; offers: { id: number; volunteer: string; status: string }[] };
+export type Report = { id: number; target_type: string; target_id: number; reason: string; details: string; status: string; created_at: string };
